@@ -3,7 +3,7 @@
 </p>
 
 <h3 align="center">
-  GoBarber - Backend
+  Rocketseat Bootcamp GoStack - Backend
 </h3>
 
 <p align="center">
