@@ -1,12 +1,3 @@
-# criando serviço de banco de dados postgres
-
-
-# criando serviço de banco de dados mongo
-
-
-# criando serviço de banco de dados redis
-
-
 <h1 align="center">
   GoBarber - Backend
 </h1>
