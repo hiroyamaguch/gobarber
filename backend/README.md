@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/hiroyamaguch/gobarber/tree/master/backend?color=04D361">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/hiroyamaguch/gobarber?color=04D361">
 
   <a href="https://pedroyamaguchi.dev/">
     <img alt="Made by Pedro Yamaguchi" src="https://img.shields.io/badge/made%20by-Pedro%20Yamaguchi-04D361">
@@ -42,8 +42,8 @@ docker run --name mongo -p 27017:27017 -d -t mongo
 docker run --name redis -p 6379:6379 -d -t redis:alpine
 ```
 ##### Alterando os arquivos de configuração
-1. Altere as credenciais do banco de dados no arquivo `ormconfig.example.json` e renomeie o arquivo para `ormconfig.json`.
-2. Altere as credenciais do arquivo `.env.example` e renomeie para `.env`.
+1. Altere as credenciais do banco de dados no arquivo `ormconfig.example.json` e renomeie o arquivo para `ormconfig.json`
+2. Altere as credenciais do arquivo `.env.example` e renomeie para `.env`
 
 ##### Executando o servidor
 ```bash
@@ -62,6 +62,6 @@ $ npm install
 $ yarn dev:server
 # ou
 $ npm run dev:server
-```
 
-O servidor vai estar rodando no endereço [http://localhost:3333](http://localhost:3333)
+# O servidor vai estar rodando no endereço [http://localhost:3333](http://localhost:3333)
+```
