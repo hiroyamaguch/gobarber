@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="GoBarber Logo" src="./frontend/src/assets/logo.svg">
+  <img alt="GoBarber Logo" src="../frontend/src/assets/logo.svg">
 </p>
 
 <h3 align="center">
