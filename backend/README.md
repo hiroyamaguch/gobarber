@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="#memo-sobre-o-projeto">Sobre o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#rocket-como-executar-o-projeto">Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-como-executar-o-projeto">Como executar</a>
 </p>
 
 ## :memo: Sobre o projeto
