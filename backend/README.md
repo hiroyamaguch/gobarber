@@ -1,69 +1,76 @@
-# Recuperação de senha
+# criando serviço de banco de dados postgres
 
-**RF (Requisitos Funcionais)**
 
-- O usuário deve poder recuperar sua senha informando o seu e-mail;
-- O usuário deve receber um e-mail com instruções de recuperação de senha;
-- O usuário deve poder resetar sua senha;
+# criando serviço de banco de dados mongo
 
-**RNF (Requisitos Não Funcionais)**
 
-- Utilizar Mailtrap para testar envios em ambiente de dev;
-- Utilizar Amazon SES para envios em produção;
-- O envio de e-mails deve acontecer em segundo plano (background job);
+# criando serviço de banco de dados redis
 
-**RN (Regras de Negócio)**
 
-- O link enviado por email para resetar senha, deve expirar em 2h;
-- O usuário precisa confirmar a nova senha ao resetar sua senha;
+<h1 align="center">
+  GoBarber - Backend
+</h1>
 
-# Atualização do perfil
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/hiroyamaguch/gobarber/tree/master/backend?color=04D361">
 
-**RF (Requisitos Funcionais)**
+  <a href="https://pedroyamaguchi.dev/">
+    <img alt="Made by Pedro Yamaguchi" src="https://img.shields.io/badge/made%20by-Pedro%20Yamaguchi-04D361">
+  </a>
 
-- O usuário deve poder atualizar seu nome, email e senha;
+  <a href="./LICENSE">
+    <img alt="License" src="https://img.shields.io/badge/license-MIT-04D361">
+  </a>
+</p>
 
-**RN (Regras de Negócio)**
+<p align="center">
+  <a href="#memo-sobre-o-projeto">Sobre o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-como-executar-o-projeto">Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://www.figma.com/file/pKv4HdDnafeXNm1h4LYb07/Web?node-id=0%3A1">Projeto no Figma</a>
+</p>
 
-- O usuário não pode alterar seu e-mail para um e-mail já atualizado;
-- Para atualizar sua senha, o usuário deve informar a senha antiga;
-- Para atualizar sua senha, o usuário precisa confirmar a nova senha;
+## :memo: Sobre o projeto
+GoBarber é uma aplicação para realizar agendamentos de serviço de cabeleireiro. Essa aplicação foi desenvolvida durante o curso Bootcamp GoStack da Rocketseat.
 
-# Painel do prestador
+#### Tecnologias utilizadas
+- HTML / JS / TypeScript
+- [NodeJS](https://pt-br.reactjs.org/)
 
-**RF (Requisitos Funcionais)**
+## :rocket: Como executar o projeto
+Pré-requisitos: npm / yarn + docker
 
-- O usuário deve poder listar seus agendamentos de um dia específico;
-- O prestador deve receber uma notificação sempre que houver um novo agendamento;
-- O prestador deve poder visualizar as notificações não lidas;
+##### Criando os containers que vão ser utilizados
+```bash
+# Postgres
+docker run --name postgres -e POSTGRES_PASSWORD=1234 -p 5432:5432 -d postgres
 
-**RNF (Requisitos Não Funcionais)**
+# Mongo
+docker run --name mongo -p 27017:27017 -d -t mongo
 
-- Os agendamentos do prestador no dia devem ser armazenados em cache;
-- As notificações do prestador devem ser armazenadas no MongoDB;
-- As notificações do prestador devem ser enviadas em tempo-real utilizando Socket.io;
+# Redis
+docker run --name redis -p 6379:6379 -d -t redis:alpine
+```
+##### Alterando os arquivos de configuração
+1. Altere as credenciais do banco de dados no arquivo `ormconfig.example.json` e renomeie o arquivo para `ormconfig.json`.
+2. Altere as credenciais do arquivo `.env.example` e renomeie para `.env`.
 
-**RN (Regras de Negócio)**
+##### Executando o servidor
+```bash
+# Clone este repositório
+git clone https://github.com/hiroyamaguch/gobarber.git
 
-- A notificação deve ter um status de lida ou não-lida para que o prestador possa controlar;
+# Acesse a pasta do projeto no terminal/cmd
+cd gobarber
 
-# Agendamento de serviços
+# Instale as dependências
+$ yarn
+# ou
+$ npm install
 
-**RF (Requisitos Funcionais)**
+# Execute o projeto
+$ yarn dev:server
+# ou
+$ npm run dev:server
+```
 
-- O usuário deve poder listar todos prestadores de serviços cadastrados;
-- O usuário deve poder listar os dias de um mês com pelo menos um horário disponível de um prestador;
-- O usuário deve poder listar horários disponíveis em um dia específico de um prestador;
-- O usuário deve poder realizar um novo agendamento com um prestador;
-
-**RNF (Requisitos Não Funcionais)**
-
-- A listagem de prestadores deve ser armazenada em cache;
-
-**RN (Regras de Negócio)**
-
-- Cada agendamento deve durar 1h exatamente;
-- Os agendamentos devem estar disponíveis entre 8h às 18h (Primeiro às 8h, último às 17h);
-- O usuário não pode agendar em um horário já ocupado;
-- O usuário não pode agendar em um horário que já passou;
-- O usuário não pode agendar serviços consigo mesmo;
+O servidor vai estar rodando no endereço [http://localhost:3333](http://localhost:3333)

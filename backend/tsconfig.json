@@ -12,6 +12,11 @@
       "@config/*": ["config/*"],
       "@shared/*": ["shared/*"]
     },
+    "typeRoots": [
+      "./src/@types",
+      "./@types",
+      "./node_modules/@types"
+    ],
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,

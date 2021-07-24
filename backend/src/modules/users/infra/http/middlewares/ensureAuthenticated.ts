@@ -24,10 +24,10 @@ export default function ensureAuthenticated(
   try {
     const decode = verify(token, AuthConfig.Jwt.secret);
 
-    const { sub } = decode as TokenPayLoad;
+    const { sub } = <string> <unknown> decode;
 
     request.user = {
-      id: sub,
+      id: sub(),
     };
 
     return next();
