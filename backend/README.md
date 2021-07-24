@@ -1,31 +1,23 @@
-<h1 align="center">
+<p align="center">
+  <img alt="GoBarber Logo" src="./frontend/src/assets/logo.svg">
+</p>
+
+<h3 align="center">
   GoBarber - Backend
-</h1>
-
-<p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/hiroyamaguch/gobarber?color=04D361">
-
-  <a href="https://pedroyamaguchi.dev/">
-    <img alt="Made by Pedro Yamaguchi" src="https://img.shields.io/badge/made%20by-Pedro%20Yamaguchi-04D361">
-  </a>
-
-  <a href="./LICENSE">
-    <img alt="License" src="https://img.shields.io/badge/license-MIT-04D361">
-  </a>
-</p>
-
-<p align="center">
-  <a href="#memo-sobre-o-projeto">Sobre o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#rocket-como-executar-o-projeto">Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="https://www.figma.com/file/pKv4HdDnafeXNm1h4LYb07/Web?node-id=0%3A1">Projeto no Figma</a>
-</p>
-
-## :memo: Sobre o projeto
-GoBarber é uma aplicação para realizar agendamentos de serviço de cabeleireiro. Essa aplicação foi desenvolvida durante o curso Bootcamp GoStack da Rocketseat.
+</h3>
 
 #### Tecnologias utilizadas
 - HTML / JS / TypeScript
+- [Celebrate](https://github.com/arb/celebrate)
+- [Date-fns](https://date-fns.org/)
+- [Eslint](https://eslint.org/)
+- [Express](https://expressjs.com/pt-br/)
+- [Jest](https://jestjs.io/pt-BR/)
+- [MongoDB](https://www.mongodb.com/pt-br)
 - [NodeJS](https://pt-br.reactjs.org/)
+- [Postgres](https://www.postgresql.org/)
+- [Redis](https://redis.io/)
+- [TypeORM](https://typeorm.io/#/)
 
 ## :rocket: Como executar o projeto
 Pré-requisitos: npm / yarn + docker
@@ -63,5 +55,5 @@ $ yarn dev:server
 # ou
 $ npm run dev:server
 
-# O servidor vai estar rodando no endereço [http://localhost:3333](http://localhost:3333)
+# O servidor vai estar rodando no endereço http://localhost:3333
 ```
