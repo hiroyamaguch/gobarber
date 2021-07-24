@@ -6,6 +6,13 @@
   GoBarber - Backend
 </h3>
 
+<p align="center">
+  <a href="#memo-sobre-o-projeto">Sobre o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-como-executar-o-projeto">Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
+
+## :memo: Sobre o projeto
+GoBarber é uma aplicação para realizar agendamentos de serviço de cabeleireiro. Essa aplicação foi desenvolvida durante o curso Bootcamp GoStack da Rocketseat.
 #### Tecnologias utilizadas
 - HTML / JS / TypeScript
 - [Celebrate](https://github.com/arb/celebrate)
