@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/hiroyamaguch/GoBarber?color=04D361">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/hiroyamaguch/gobarber?color=04D361">
 
   <a href="https://pedroyamaguchi.dev/">
     <img alt="Made by Pedro Yamaguchi" src="https://img.shields.io/badge/made%20by-Pedro%20Yamaguchi-04D361">
