@@ -13,7 +13,7 @@ import { Container } from './styles';
 
 interface ToastProps {
   message: ToastMessage;
-  style: object;
+  style: Record<string, unknown>;
 }
 
 const icons = {

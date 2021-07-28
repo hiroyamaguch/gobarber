@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-
 import Tooltip from '../Tooltip';
 
 interface ContainerProps {
@@ -76,5 +75,4 @@ export const Error = styled(Tooltip)`
       border-color: #c53030 transparent;
     }
   }
-
 `;

@@ -13,7 +13,7 @@ import { Container, Error } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
-  containerStyle?: object;
+  containerStyle?: Record<string, unknown>;
   icon?: React.ComponentType<IconBaseProps>;
 }
 

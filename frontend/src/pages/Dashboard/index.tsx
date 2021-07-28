@@ -29,7 +29,7 @@ interface MonthAvailability {
   available: boolean;
 }
 
-interface Appointment {
+interface IAppointment {
   id: string;
   date: string;
   hourFormatted: string;
@@ -42,7 +42,7 @@ interface Appointment {
 const Dashboard: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [currentMonth, setCurrentMonth] = useState(new Date());
-  const [appointments, setAppointments] = useState<Appointment[]>([]);
+  const [appointments, setAppointments] = useState<IAppointment[]>([]);
   const [monthAvailability, setMonthAvailability] = useState<
     MonthAvailability[]
   >([]);
@@ -64,7 +64,7 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     api
-      .get<Appointment[]>('appointments/me', {
+      .get<IAppointment[]>('appointments/me', {
         params: {
           year: selectedDate.getFullYear(),
           month: selectedDate.getMonth() + 1,
@@ -76,8 +76,6 @@ const Dashboard: React.FC = () => {
           ...appointment,
           hourFormatted: format(parseISO(appointment.date), 'HH:mm'),
         }));
-
-        console.log(appointmentsFormatted);
 
         setAppointments(appointmentsFormatted);
       });

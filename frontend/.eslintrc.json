@@ -7,9 +7,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
-    
-    "prettier/@typescript-eslint",
-    
+    "prettier",
     "airbnb"
   ],
   "globals": {
@@ -36,7 +34,6 @@
 
     "react/prop-types": "off",
     
-    
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-curly-newline":"off",    
@@ -49,12 +46,13 @@
 
     "implicit-arrow-linebreak": "off",
     
-    "no-unused-expressions": "off",
-    
     "object-curly-newline": "off",
     
     "prettier/prettier": "error",
-
+    
+    "no-unused-vars":"warn",
+    "no-unused-expressions": "warn",
+    "no-use-before-define":"off",
     "no-confusing-arrow": "off",
 
     "operator-linebreak": "off",
