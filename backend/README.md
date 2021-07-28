@@ -50,7 +50,7 @@ docker run --name redis -p 6379:6379 -d -t redis:alpine
 git clone https://github.com/hiroyamaguch/gobarber.git
 
 # Acesse a pasta do projeto no terminal/cmd
-cd gobarber
+cd gobarber/backend
 
 # Instale as dependências
 $ yarn
