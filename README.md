@@ -34,61 +34,12 @@ GoBarber é uma aplicação para realizar agendamentos de serviço de cabeleirei
 
 #### Tecnologias utilizadas
 
-##### Back-end
-- [NodeJS](https://nodejs.org/en/)
-- [Express](https://expressjs.com/pt-br/)
-- [Knex](https://knexjs.org/)
-- [Postgres](https://www.postgresql.org/)
-##### Front-end
-- [ReactJS](https://pt-br.reactjs.org/)
-- [Axios](https://github.com/axios/axios)
-##### Front-end Mobile
-- [React Native](https://reactnative.dev/)
-- [Expo](https://expo.io/)
-- [Axios](https://github.com/axios/axios)
+##### [Back-end](./backend/README.md)
+##### [Front-end](./frontend/README.md)
+##### [Front-end Mobile](./appgobarber/README.md)
 
 ## :rocket: Como executar o projeto
-```bash
-  # Clone este repositório
-  git clone https://github.com/hiroyamaguch/GoBarber.git
-```
 
-##### Back-end
-```bash
-  # Acesse a pasta do back-end no terminal/cmd
-  cd GoBarber && cd backend
-
-  # Instalando pacotes
-  yarn
-  # ou
-  npm install
-
-  # Executando o projeto
-  yarn start
-```
-##### Front-end
-```bash
-  # Acesse a pasta do front-end no terminal/cmd
-  cd GoBarber && cd frontend
-  
-  # Instalando pacotes
-  yarn
-  # ou
-  npm install
-
-  # Executando o projeto
-  yarn start
-```
-##### Front-end Mobile
-```bash
-  # Acesse a pasta do front-end mobile no terminal/cmd
-  cd GoBarber && cd appgobarber
-  
-  # Instalando pacotes
-  yarn
-  # ou
-  npm install
-
-  # Executando o projeto
-  yarn start
-```
+##### [Back-end](./backend/README.md)
+##### [Front-end](./frontend/README.md)
+##### [Front-end Mobile](./appgobarber/README.md)
