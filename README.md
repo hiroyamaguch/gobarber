@@ -19,19 +19,12 @@
 </p>
 
 <p align="center">
-  <a href="#memo-sobre-o-projeto">Sobre o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#rocket-como-executar-o-projeto">Como executar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="https://www.figma.com/file/BXCihtXXh9p37lGsENV614/GoBarber?node-id=57%3A515">Projeto no Figma</a>
-</p>
-
-<p align="center">
   <img alt="Web" src="#">
   <img alt="Mobile" src="#">
 </p>
 
 ## :memo: Sobre o projeto
 GoBarber é uma aplicação para realizar agendamentos de serviço de cabeleireiro. Essa aplicação foi desenvolvida durante o curso Bootcamp GoStack da Rocketseat.
-
 
 <p align="center">
   <a href="./backend">Back-end</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
