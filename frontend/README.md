@@ -31,7 +31,7 @@ Pré-requisitos: npm / yarn
 git clone https://github.com/hiroyamaguch/gobarber.git
 
 # Acesse a pasta do projeto no terminal/cmd
-cd gobarber
+cd gobarber/frontend
 
 # Instale as dependências
 $ yarn
