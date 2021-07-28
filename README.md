@@ -32,14 +32,9 @@
 ## :memo: Sobre o projeto
 GoBarber é uma aplicação para realizar agendamentos de serviço de cabeleireiro. Essa aplicação foi desenvolvida durante o curso Bootcamp GoStack da Rocketseat.
 
-#### Tecnologias utilizadas
 
-##### [Back-end](./backend/README.md)
-##### [Front-end](./frontend/README.md)
-##### [Front-end Mobile](./appgobarber/README.md)
-
-## :rocket: Como executar o projeto
-
-##### [Back-end](./backend/README.md)
-##### [Front-end](./frontend/README.md)
-##### [Front-end Mobile](./appgobarber/README.md)
+<p align="center">
+  <a href="./backend">Back-end</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="./frontend">Front-end</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="./appgobarber">App</a>
+</p>
