@@ -3,9 +3,9 @@ import { verify } from 'jsonwebtoken';
 import AuthConfig from '@config/auth';
 
 interface TokenPayLoad {
-  iat: string;
-  exp: string;
-  sub: string;
+  iat: number | undefined;
+  exp: number;
+  sub: string | undefined | (() => string);
 }
 
 export default function ensureAuthenticated(
@@ -24,11 +24,13 @@ export default function ensureAuthenticated(
   try {
     const decode = verify(token, AuthConfig.Jwt.secret);
 
-    const { sub } = <string> <unknown> decode;
+    const { sub } = decode as TokenPayLoad;
 
-    request.user = {
-      id: sub(),
-    };
+    if (typeof(sub) == "string") {
+      request.user = {
+        id: sub,
+      };
+    }
 
     return next();
   } catch (err) {

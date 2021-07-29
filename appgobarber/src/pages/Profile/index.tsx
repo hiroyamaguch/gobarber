@@ -14,7 +14,7 @@ import { Form } from '@unform/mobile';
 
 import * as Yup from 'yup';
 import Icon from 'react-native-vector-icons/Feather';
-import ImagePicker from 'react-native-image-picker';
+import { launchImageLibrary } from 'react-native-image-picker';
 import { useAuth } from '../../hooks/auth';
 import api from '../../services/api';
 
@@ -115,36 +115,30 @@ const Profile: React.FC = () => {
     [navigation, updateUser],
   );
 
+  const handlePickUpImage = useCallback((response) => {
+    if (response.didCancel) {
+      return;
+    }
+    if (response.error) {
+      Alert.alert('Erro ao atualizar seu avatar.');
+      return;
+    }
+
+    const data = new FormData();
+
+    data.append('avatar', {
+      type: 'image/jpg',
+      name: `${user.id}.jpg`,
+      uri: response.uri,
+    });
+
+    api.patch('users/avatar', data).then(reqResponse => {
+      updateUser(reqResponse.data.user);
+    });
+  }, []);
+
   const handleAvatarChange = useCallback(() => {
-    ImagePicker.showImagePicker(
-      {
-        title: 'Selecione um avatar',
-        cancelButtonTitle: 'Cancelar',
-        takePhotoButtonTitle: 'Usar câmera',
-        chooseFromLibraryButtonTitle: 'Escolher da galeria',
-      },
-      response => {
-        if (response.didCancel) {
-          return;
-        }
-        if (response.error) {
-          Alert.alert('Erro ao atualizar seu avatar.');
-          return;
-        }
-
-        const data = new FormData();
-
-        data.append('avatar', {
-          type: 'image/jpg',
-          name: `${user.id}.jpg`,
-          uri: response.uri,
-        });
-
-        api.patch('users/avatar', data).then(reqResponse => {
-          updateUser(reqResponse.data.user);
-        });
-      },
-    );
+    launchImageLibrary({mediaType: 'photo'}, handlePickUpImage);
   }, [user.id, updateUser]);
 
   const navigateBack = useCallback(() => {
