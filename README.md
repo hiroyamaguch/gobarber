@@ -26,6 +26,7 @@
 
 <p align="center">
   <img alt="Web" src="https://github.com/hiroyamaguch/assets/blob/1e18d6c19e621ff6f2990d28be93d4590cc47b5e/gobarber/web.gif">
+  <img alt="Web" src="https://github.com/hiroyamaguch/assets/blob/1d7a95dacc49b4bf00fe12856793e9fbf19498e4/gobarber/mobile.gif">
 </p>
 
 ## :memo: Sobre o projeto
