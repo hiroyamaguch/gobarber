@@ -47,6 +47,4 @@ $ npm run ios
 $ yarn start
 # ou
 $ npm run start
-
-# O servidor vai estar rodando no endereço http://localhost:3000
 ```
