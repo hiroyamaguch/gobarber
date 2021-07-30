@@ -5,28 +5,38 @@ export const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-  padding: 0 30px ${Platform.OS === 'android' ? 150 : 40}px;
+  padding: ${Platform.OS === 'android' ? 150 : 40}px 30px;
+`;
+
+export const HeadContainer = styled.View`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0px;
 `;
 
 export const BackButton = styled.TouchableOpacity`
-  margin-top: 40px;
+`;
+
+export const SignOutButton = styled.TouchableOpacity`
 `;
 
 export const UserAvatarButton = styled.TouchableOpacity`
-  margin-top: 32px;
+  margin: 18px 0;
 `;
 
 export const UserAvatar = styled.Image`
-  width: 186px;
-  height: 186px;
-  border-radius: 98px;
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
   align-self: center;
+  background: green;
 `;
 
 export const Title = styled.Text`
+  font-family: 'RobotoSlab-Medium';
   font-size: 20px;
   color: #f4ede8;
-  font-family: 'RobotoSlab-Medium';
-  margin: 24px 0;
-  margin-right: auto;
 `;

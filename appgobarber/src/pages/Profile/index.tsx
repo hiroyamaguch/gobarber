@@ -23,10 +23,12 @@ import Input from '../../components/Input';
 
 import {
   Container,
+  HeadContainer,
   BackButton,
   UserAvatarButton,
   UserAvatar,
   Title,
+  SignOutButton,
 } from './styles';
 
 interface ProfileFormData {
@@ -44,7 +46,7 @@ const Profile: React.FC = () => {
   const newPasswordInputRef = useRef<TextInput>(null);
   const passwordConfirmationInputRef = useRef<TextInput>(null);
   const navigation = useNavigation();
-  const { user, updateUser } = useAuth();
+  const { user, updateUser, signOut } = useAuth();
 
   const handleSubmit = useCallback(
     async (data: ProfileFormData) => {
@@ -161,15 +163,21 @@ const Profile: React.FC = () => {
           contentContainerStyle={{ flex: 1 }}
         >
           <Container>
-            <BackButton onPress={navigateBack}>
-              <Icon name="chevron-left" size={16} />
-            </BackButton>
+            <HeadContainer>
+              <BackButton onPress={navigateBack}>
+                <Icon name="chevron-left" size={18} color="#f4ede8"/>
+              </BackButton>
+
+              <Title>Meu Perfil</Title>
+
+              <SignOutButton onPress={signOut}>
+                <Icon name="power" size={18} color="#f4ede8"/>
+              </SignOutButton>
+            </HeadContainer>
 
             <UserAvatarButton onPress={handleAvatarChange}>
               <UserAvatar source={{ uri: user.avatar_url }} />
             </UserAvatarButton>
-
-            <Title>Meu Perfil</Title>
 
             <Form initialData={user} ref={formRef} onSubmit={handleSubmit}>
               <Input

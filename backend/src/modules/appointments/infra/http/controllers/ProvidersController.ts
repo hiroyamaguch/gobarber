@@ -6,12 +6,12 @@ import ListProvidersService from '@modules/appointments/services/ListProvidersSe
 
 export default class ProvidersController {
   public async index(request: Request, response: Response): Promise<Response> {
-    const { provider_id } = request.body;
+    const { user } = request;
 
     const listProviders = container.resolve(ListProvidersService);
 
     const providers = await listProviders.execute({
-      except_user_id: provider_id,
+      except_user_id: user.id,
     });
 
     return response.json(classToClass(providers));

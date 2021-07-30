@@ -197,7 +197,6 @@ const CreateAppointment: React.FC = () => {
               mode="date"
               display="calendar"
               onChange={handleDateChanged}
-              textColor="#f4ede8"
               value={selectedDate}
             />
           )}
