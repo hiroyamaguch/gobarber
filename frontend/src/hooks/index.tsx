@@ -3,7 +3,11 @@ import React from 'react';
 import { AuthProvider } from './auth';
 import { ToastProvider } from './toast';
 
-const AppProvider: React.FC = ({ children }) => (
+type AppProviderProps = React.PropsWithChildren;
+
+const AppProvider: React.FC<AppProviderProps> = ({
+  children,
+}: AppProviderProps) => (
   <AuthProvider>
     <ToastProvider>{children}</ToastProvider>
   </AuthProvider>

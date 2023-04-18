@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"name": "api",
+			"path": "api"
+		},
+		{
+			"name": "app",
+			"path": "app"
+		},
+		{
+			"name": "frontend",
+			"path": "frontend"
+		},
+	],
+	"settings": {
+		"cSpell.words": [
+			"corporativo"
+		],
+		"typescript.tsdk": "api/node_modules/typescript/lib"
+	}
+}

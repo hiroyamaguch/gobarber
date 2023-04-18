@@ -73,4 +73,9 @@ const Input: React.FC<InputProps> = ({
   );
 };
 
+Input.defaultProps = {
+  containerStyle: {},
+  icon: undefined,
+};
+
 export default Input;

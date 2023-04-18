@@ -31,48 +31,38 @@
   "rules": {
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
-
     "react/prop-types": "off",
-    
+    "react/function-component-definition": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-props-no-spreading": "off",
-    "react/jsx-curly-newline":"off",    
+    "react/jsx-curly-newline": "off",
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".tsx"]
+        "extensions": [
+          ".tsx"
+        ]
       }
     ],
-
     "implicit-arrow-linebreak": "off",
-    
     "object-curly-newline": "off",
-    
     "prettier/prettier": "error",
-    
-    "no-unused-vars":"warn",
+    "no-unused-vars": "warn",
     "no-unused-expressions": "warn",
-    "no-use-before-define":"off",
+    "no-use-before-define": "off",
     "no-confusing-arrow": "off",
-
     "operator-linebreak": "off",
-    
     "arrow-parens": "off",
-
     "camelcase": "off",
-
     "import/no-duplicates": "off",
-
     "function-paren-newline": "off",
-    
     "@typescript-eslint/camelcase": "off",
-    "@typescript-eslint/explicit-function-return-type" : [
+    "@typescript-eslint/explicit-function-return-type": [
       "error",
       {
         "allowExpressions": true
       }
     ],
-    
     "import/prefer-default-export": "off",
     "import/extensions": [
       "error",

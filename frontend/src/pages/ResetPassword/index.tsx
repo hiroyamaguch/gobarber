@@ -1,5 +1,5 @@
 import React, { useCallback, useRef } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
@@ -28,7 +28,7 @@ const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const { addToast } = useToast();
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
 
   const handleSubmit = useCallback(
@@ -39,7 +39,7 @@ const SignIn: React.FC = () => {
         const schema = Yup.object().shape({
           password: Yup.string().required('Senha obrigatória'),
           passwordConfirmation: Yup.string().oneOf(
-            [Yup.ref('password'), null],
+            [Yup.ref('password'), undefined],
             'Confirmação de senha incorreta',
           ),
         });
@@ -60,7 +60,7 @@ const SignIn: React.FC = () => {
           token,
         });
 
-        history.push('/');
+        navigate('/');
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
@@ -77,7 +77,7 @@ const SignIn: React.FC = () => {
         });
       }
     },
-    [addToast, history, location],
+    [addToast, navigate, location],
   );
 
   return (

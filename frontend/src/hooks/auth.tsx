@@ -1,4 +1,10 @@
-import React, { createContext, useCallback, useState, useContext } from 'react';
+import React, {
+  createContext,
+  useCallback,
+  useState,
+  useContext,
+  useMemo,
+} from 'react';
 import api from '../services/api';
 
 interface User {
@@ -20,14 +26,22 @@ interface SignInCredentials {
 
 interface AuthContextData {
   user: User;
+  // eslint-disable-next-line no-unused-vars
   signIn(credentials: SignInCredentials): Promise<void>;
   signOut(): void;
+  // eslint-disable-next-line no-unused-vars
   updateUser(user: User): void;
+}
+
+interface AuthProviderProps extends React.PropsWithChildren {
+  children: React.ReactNode;
 }
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
-export const AuthProvider: React.FC = ({ children }) => {
+export const AuthProvider: React.FC<AuthProviderProps> = ({
+  children,
+}: AuthProviderProps) => {
   const [data, setData] = useState(() => {
     const token = localStorage.getItem('@Gobarber:token');
     const user = localStorage.getItem('@Gobarber:user');
@@ -41,7 +55,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     return {} as AuthData;
   });
 
-  const signIn = useCallback(async ({ email, password }) => {
+  const signIn = useCallback(async ({ email, password }: SignInCredentials) => {
     const response = await api.post('sessions', {
       email,
       password,
@@ -76,13 +90,12 @@ export const AuthProvider: React.FC = ({ children }) => {
     [setData, data.token],
   );
 
-  return (
-    <AuthContext.Provider
-      value={{ user: data.user, signIn, signOut, updateUser }}
-    >
-      {children}
-    </AuthContext.Provider>
+  const value = useMemo(
+    () => ({ user: data.user, signIn, signOut, updateUser }),
+    [data.user, signIn, signOut, updateUser],
   );
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
 export function useAuth(): AuthContextData {

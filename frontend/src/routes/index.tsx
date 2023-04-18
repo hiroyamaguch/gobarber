@@ -1,7 +1,7 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Routes as RouterDomRoutes, Route } from 'react-router-dom';
 
-import Route from './Route';
+import ProtectedRoute from './ProtectedRoute';
 
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
@@ -12,15 +12,18 @@ import Profile from '../pages/Profile';
 import Dashboard from '../pages/Dashboard';
 
 const Routes: React.FC = () => (
-  <Switch>
-    <Route path="/" exact component={SignIn} />
-    <Route path="/signup" component={SignUp} />
-    <Route path="/forgot-password" component={ForgotPassword} />
-    <Route path="/reset-password" component={ResetPassword} />
+  <RouterDomRoutes>
+    <Route path="/" Component={SignIn} />
+    <Route path="/signup" Component={SignUp} />
+    <Route path="/forgot-password" Component={ForgotPassword} />
+    <Route path="/reset-password" Component={ResetPassword} />
 
-    <Route path="/profile" component={Profile} isPrivate />
-    <Route path="/dashboard" component={Dashboard} isPrivate />
-  </Switch>
+    <Route path="/profile" element={<ProtectedRoute component={Profile} />} />
+    <Route
+      path="/dashboard"
+      element={<ProtectedRoute component={Dashboard} />}
+    />
+  </RouterDomRoutes>
 );
 
 export default Routes;

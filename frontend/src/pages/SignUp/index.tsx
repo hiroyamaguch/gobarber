@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from 'react';
 import { FiArrowLeft, FiMail, FiLock, FiUser } from 'react-icons/fi';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
@@ -27,7 +27,7 @@ const SignIn: React.FC = () => {
 
   const { addToast } = useToast();
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = useCallback(
     async (data: SignUpFormData) => {
@@ -48,7 +48,7 @@ const SignIn: React.FC = () => {
 
         await api.post('/users', data);
 
-        history.push('/');
+        navigate('/');
 
         addToast({
           type: 'sucess',
@@ -71,7 +71,7 @@ const SignIn: React.FC = () => {
         });
       }
     },
-    [addToast, history],
+    [addToast, navigate],
   );
 
   return (

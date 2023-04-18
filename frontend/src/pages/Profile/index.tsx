@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, ChangeEvent } from 'react';
 import { FiMail, FiLock, FiUser, FiCamera, FiArrowLeft } from 'react-icons/fi';
-import { useHistory, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
@@ -30,14 +30,14 @@ const Profile: React.FC = () => {
   const { addToast } = useToast();
   const { user, updateUser } = useAuth();
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = useCallback(
     async (data: ProfileFormData) => {
       try {
         formRef.current?.setErrors({});
 
-        const schema = Yup.object().shape({
+        const rules = Yup.object().shape({
           name: Yup.string().required('Nome obrigatório'),
 
           email: Yup.string()
@@ -48,23 +48,23 @@ const Profile: React.FC = () => {
 
           password: Yup.string().when('old_password', {
             is: (val: string) => val.length,
-            then: Yup.string().required('Campo obrigatório'),
-            otherwise: Yup.string(),
+            then: schema => schema.required('Campo obrigatório'),
+            otherwise: schema => schema.strict(),
           }),
 
           password_confirmation: Yup.string()
             .when('old_password', {
               is: (val: string) => val.length,
-              then: Yup.string().required('Campo obrigatório'),
-              otherwise: Yup.string(),
+              then: schema => schema.required('Campo obrigatório'),
+              otherwise: schema => schema.strict(),
             })
             .oneOf(
-              [Yup.ref('password'), null],
+              [Yup.ref('password'), undefined],
               'Confirmação de senha incorreta',
             ),
         });
 
-        await schema.validate(data, {
+        await rules.validate(data, {
           abortEarly: false,
         });
 
@@ -83,7 +83,7 @@ const Profile: React.FC = () => {
 
         updateUser(response.data.user);
 
-        history.push('/dashboard');
+        navigate('/dashboard');
 
         addToast({
           type: 'sucess',
@@ -106,7 +106,7 @@ const Profile: React.FC = () => {
         });
       }
     },
-    [addToast, history, updateUser],
+    [addToast, navigate, updateUser],
   );
 
   const handleAvatarChange = useCallback(
